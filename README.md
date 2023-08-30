@@ -3,6 +3,7 @@
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
 * [Site: https://www.saucedemo.com/ ](#descrição-do-projeto)
+* [Nesse projeto é utilizado o conceito de Page Objects. ](#descrição-do-projeto)
 
 
 # :hammer: Funcionalidades automatizadas
