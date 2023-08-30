@@ -17,13 +17,14 @@ Adcionar/Remover item ao carrinho
 Funcionalidades do filtro
     Dado que estou na tela inicial
     Quando clico no campo filtro
+    E filtro por Name Z to A
+    Então o sistema deve retornar os produtos por Name Z to A
+    
+    Dado que estou na tela inicial
+    Quando clico no campo filtro
     E filtro por Name A to Z
     Então o sistema deve retornar os produtos por Name A to Z
 
-    Dado que estou na tela inicial
-    Quando clico no campo filtro
-    E filtro por Name Z to A
-    Então o sistema deve retornar os produtos por Name Z to A
 
     Dado que estou na tela inicial
     Quando clico no campo filtro

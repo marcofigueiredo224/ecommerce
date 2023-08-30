@@ -26,3 +26,40 @@ E em seguida clico no botão "Remove"
 
 Então o item deve ser removido do carrinho
     Element Should Not Be Visible    ${Icone_CarrinhosemItem} 
+
+
+Quando clico no campo filtro
+    Click Element    class=product_sort_container
+
+ E filtro por Name Z to A
+    Wait Until Element Is Visible    css=#header_container > div.header_secondary_container > div > span > select > option:nth-child(2)
+    Click Element    css=#header_container > div.header_secondary_container > div > span > select > option:nth-child(2)
+
+Então o sistema deve retornar os produtos por Name Z to A
+    Sleep    2s    
+    Page Should Contain     Name (Z to A)
+
+
+E filtro por Name A to Z
+    Wait Until Element Is Visible    css=#header_container > div.header_secondary_container > div > span > select > option:nth-child(1)
+    Click Element   css=#header_container > div.header_secondary_container > div > span > select > option:nth-child(1)
+
+Então o sistema deve retornar os produtos por Name A to Z
+    Sleep    2s    
+    Page Should Contain     Name (A to Z)    
+
+
+E filtro por Price low to high
+    Wait Until Element Is Visible    css=#header_container > div.header_secondary_container > div > span > select > option:nth-child(3)
+    Click Element   css=#header_container > div.header_secondary_container > div > span > select > option:nth-child(3)
+Então o sistema deve retornar os produtos por low to high
+    Sleep    2s
+    Page Should Contain    Price (low to high)
+
+
+E filtro por Price high to low
+    Wait Until Element Is Visible    css=#header_container > div.header_secondary_container > div > span > select > option:nth-child(4)
+    Click Element   css=#header_container > div.header_secondary_container > div > span > select > option:nth-child(4)
+Então o sistema deve retornar os produtos por high to low
+    Sleep    2s
+    Page Should Contain    Price (high to low)
