@@ -1,7 +1,8 @@
 *** Settings ***
 Resource    ../resources/main.robot
-Resource    ../resources/pages/adicionar_carrinho.robot
+Resource    ../resources/pages/telainicial.robot
 Test Setup          Dado que faço login
+Test Teardown       Fechar navegador
 
 *** Test Cases ***
 Adcionar/Remover item ao carrinho
@@ -36,6 +37,8 @@ Funcionalidades do filtro
     E filtro por Price high to low
     Então o sistema deve retornar os produtos por high to low
 
-    
 
-
+Visualização dos detalhes do produto
+    Dado que estou na tela inicial
+    Quando clico no nome de um produto
+    Então devo ser redirecionado para os detalhes do produto

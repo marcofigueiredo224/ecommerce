@@ -9,3 +9,6 @@ Dado que faço login
     Input Password    css=#password         secret_sauce
     Click Element     css=#login-button
     Wait Until Element Is Visible    css=#add-to-cart-sauce-labs-backpack
+
+Fechar navegador
+    Close Browser
