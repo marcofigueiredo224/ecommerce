@@ -12,6 +12,16 @@ ${opcao_ZaA}                    css=#header_container > div.header_secondary_con
 ${opcao_AaZ}                    css=#header_container > div.header_secondary_container > div > span > select > option:nth-child(1)
 ${opcao_low_high}               css=#header_container > div.header_secondary_container > div > span > select > option:nth-child(3)
 ${opcao_high_low}               css=#header_container > div.header_secondary_container > div > span > select > option:nth-child(4)
+${nome_produto}                 class=inventory_item_name
+${preco_produto}                class=inventory_details_price
+${icone_carrinho}               class=shopping_cart_link
+${botao_chekout}                id=checkout
+${campo_firstname}              id=first-name
+${campo_lastname}               name=lastName
+${campo_zip}                    name=postalCode
+${botao_continue}               id=continue
+${botao_finish}                 id=finish
+${msg_sucesso}                  class=complete-header
 
 *** Keywords ***
  Dado que estou na tela inicial
@@ -70,9 +80,25 @@ Então o sistema deve retornar os produtos por high to low
     Page Should Contain    Price (high to low)
 
 Quando clico no nome de um produto
-    Wait Until Element Is Visible     class=inventory_item_name
-    Click Element    class=inventory_item_name
+    Wait Until Element Is Visible     ${nome_produto}
+    Click Element    ${nome_produto}
 
 Então devo ser redirecionado para os detalhes do produto
-    Wait Until Element Is Visible    class=inventory_details_price
+    Wait Until Element Is Visible    ${preco_produto} 
+
+ E clico no ícone "Carrinho"
+    Click Element   ${icone_carrinho}  
+E clico no bottão checkout
+    Click Element    ${botao_chekout}
+E preencho todos os campos do checkout 
+    Wait Until Element Is Visible    ${campo_firstname} 
+    Input Text    ${campo_firstname}     Erick
+    Input Text    ${campo_lastname}    Pulgar
+    Input Text    ${campo_zip}    49140000
+E clico no botão "Continue"
+    Click Element    ${botao_continue}
+E em "Checkout Overview" clico no botão "Finish"
+    Click Element    ${botao_finish}    
     
+Então devera ser retornado uma mensagem de sucesso
+    Wait Until Element Is Visible    ${msg_sucesso} 

@@ -42,3 +42,13 @@ Visualização dos detalhes do produto
     Dado que estou na tela inicial
     Quando clico no nome de um produto
     Então devo ser redirecionado para os detalhes do produto
+
+Finalização de compra
+     Dado que estou na tela inicial
+     Quando clico no botão "Add to cart"
+     E clico no ícone "Carrinho"
+     E clico no bottão checkout
+     E preencho todos os campos do checkout 
+     E clico no botão "Continue"
+     E em "Checkout Overview" clico no botão "Finish"
+     Então devera ser retornado uma mensagem de sucesso
